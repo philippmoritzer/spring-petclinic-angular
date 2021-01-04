@@ -13,8 +13,7 @@ exports.config = {
     chromeOptions: {
       args: [ "--headless", "--disable-gpu", "--no-sandbox", "--incognito", "--disable-dev-shm-usage" ]
     },
-  },
-  chromeDriver: '/usr/bin/chromedriver',
+  },  
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
