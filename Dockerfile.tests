@@ -12,7 +12,7 @@ RUN $(npm bin)/ng build --configuration=$environment
 # FOR RUNNING TESTS ##
 # (copy dist build-files)
 # copy working files and install dependecies and chrome for test run
-FROM nginx:1.19.5-alpine AS runtime
+FROM node:1.19.5-alpine AS runtime
 
 RUN apk update
 RUN apk add --update nodejs npm
