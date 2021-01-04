@@ -9,10 +9,10 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
     capabilities: {
+    browserName: 'chrome',
     chromeOptions: {
-      args: [ "--headless", "--disable-gpu", "--no-sandbox", "--incognito" ]
+      args: [ "--headless", "--disable-gpu", "--no-sandbox", "--incognito", "--disable-dev-shm-usage" ]
     },
-    'browserName': 'chrome'
   },
   chromeDriver: '/usr/bin/chromedriver',
   directConnect: true,
