@@ -20,7 +20,12 @@ RUN apk add --update nodejs npm
 # Installs latest Chromium package
 RUN  echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
     echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
-    apk add --no-cache bash chromium@edge nss@edge
+    apk no-cache update && \
+    apk --no-cache upgrade && \
+    apk add --no-cache bash chromium@edge nss@edge && \
+    apk add --no-cache --virtual .build-deps chromium chromium-chromedriver && \
+    rm -rf /var/cache/apk/* /tmp/*
+
 # This line is to tell karma-chrome-launcher where
 # chromium was downloaded and installed to.
 ENV CHROME_BIN /usr/bin/chromium-browser

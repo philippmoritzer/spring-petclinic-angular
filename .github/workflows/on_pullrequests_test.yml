@@ -28,8 +28,8 @@ jobs:
         run: docker run -p 8080:8080 --detach --name petclinc-frontend-container $IMAGE_NAME:latest
       - name: Run Unit-Tests (Karma)
         run:  docker exec -w /spring-petclinic-angular/  petclinc-frontend-container  npm run test
-      - name: Install Chromedriver
-        run:  docker exec -w /spring-petclinic-angular/  petclinc-frontend-container  apk add --no-cache chromium-chromedriver      
+      #- name: Install Chromedriver
+      #  run:  docker exec -w /spring-petclinic-angular/  petclinc-frontend-container  apk add --no-cache chromium-chromedriver      
       - name: Run E2E-Tests(protractor)
       #  run: docker exec -w /spring-petclinic-angular/ petclinc-frontend-container npm run  cypress:run --browser chrome --headless
         run: docker exec -w /spring-petclinic-angular/ petclinc-frontend-container npm run e2e
