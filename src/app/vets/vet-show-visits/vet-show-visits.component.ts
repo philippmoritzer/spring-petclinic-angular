@@ -19,12 +19,15 @@ export class VetShowVisitsComponent implements OnInit {
 
   constructor(private visitService: VisitService,
               private vetService: VetService,
-              private route: ActivatedRoute) {}
+              private route: ActivatedRoute) {
+                this.plannedVisits = [];
+                this.pastVisits = [];
+              }
 
   ngOnInit(): void {
     const vetId:number  = +this.route.snapshot.paramMap.get('id');
+    this.vetService.getVetById(this.route.snapshot.paramMap.get('id')).subscribe( res => this.vet = res) 
     this.visitService.getPlannedVisitsByVet(vetId).subscribe( res => this.plannedVisits = res)
-    this.visitService.getPastVisitsByVet(vetId).subscribe( res => this.pastVisits = res)
-    this.vetService.getVetById(this.route.snapshot.paramMap.get('id')).subscribe( res => this.vet = res)  
+    this.visitService.getPastVisitsByVet(vetId).subscribe( res => this.pastVisits = res) 
   }
 }
