@@ -4,7 +4,7 @@
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 30000,//11000,
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
@@ -21,18 +21,18 @@ exports.config = {
         ,'--disable-gpu'
         ,'--headless'
         ,' --single-process'
-        , '--silent',        
+        , '--silent',
         ],
     },
     useAllAngular2AppRoots: true,
-  },  
+  },
   directConnect: true,
   chromeDriver: '/usr/bin/chromedriver',
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
-    defaultTimeoutInterval: 30000,
+    defaultTimeoutInterval: 60000,//30000,
     print: function() {}
   },
   onPrepare() {
