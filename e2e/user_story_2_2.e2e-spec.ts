@@ -9,6 +9,7 @@ describe('user story 2_2 create visit with vet', () => {
 
   beforeEach(() => {
     pageOwners = new OwnersPage();
+    
   });
 
 

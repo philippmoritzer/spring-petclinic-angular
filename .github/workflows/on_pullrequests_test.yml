@@ -11,6 +11,7 @@ on:
   push:
     branches:
       - "master"
+      - "e2e_test_userstory_2_2_etc"
 
 env:
   IMAGE_NAME: spring-petclinic-angular
