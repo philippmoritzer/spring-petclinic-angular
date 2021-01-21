@@ -22,7 +22,6 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  REST_API_URL: 'http://petclinic-rest-tnpl.herokuapp.com/petclinic/api/'
-  //REST_API_URL: 'http://localhost:9966/petclinic/api/'
+  production: false,  
+  REST_API_URL: 'http://localhost:9966/petclinic/api/'
 };
