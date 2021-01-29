@@ -16,23 +16,11 @@
  *
  */
 
+/**
+ * @author Vitaliy Fedoriv
+ */
 
-// import { SpringPetclinicAngularPage } from './app.po';
-//
-// describe('spring-petclinic-angular App', () => {
-//   let page: SpringPetclinicAngularPage;
-//
-//   beforeEach(() => {
-//     page = new SpringPetclinicAngularPage();
-//   });
-//
-//   it('should display welcome message', done => {
-//     page.navigateTo();
-//     // page.getParagraphText()
-//     //   .then(msg => expect(msg).toEqual('app works!'))
-//     //   .then(done, done.fail);
-//    // expect(page.getParagraphText()).toEqual('app works!');
-//     expect(page.getParagraphText()).toEqual('Welcome to Petclinic')
-//       .then(done, done.fail);
-//   });
-// });
+export const environment = {
+  production: true,
+  REST_API_URL: 'https://petclinic-rest-tnpl-dev.herokuapp.com/petclinic/api/'
+};
