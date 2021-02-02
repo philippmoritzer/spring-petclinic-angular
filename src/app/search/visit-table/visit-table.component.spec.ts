@@ -8,6 +8,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { SearchService } from '../search.service';
 
 
+
 class VisitServiceStub {
   getVisitsBySearchTerm(searchTerm: string, noLimit:boolean): Observable<Visit[]> {
     return of([{
