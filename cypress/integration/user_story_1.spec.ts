@@ -44,6 +44,7 @@ describe('User Story 1 Delete Owner', () => {
     });
 
     it('Should delete Owner', () => {
+        cy.wait(5000);
         cy.get('.ownerFullName').last().get('a').last().click();
         cy.get('.container > :nth-child(5)').click();
         cy.wait(5000);

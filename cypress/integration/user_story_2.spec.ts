@@ -90,6 +90,7 @@ describe('User Story 2 Create visit with vet', () => {
     cy.wait(5000);
     cy.get("#searchFormInput").type('Vaccination'+random);
     cy.get("#submitButton").click();
+    cy.wait(5000);
     cy.get("app-visit-table").should("contain", 'Vaccination'+random);
     cy.get("app-visit-table").find('td').contains('Vaccination'+random).parent().as('row');
     cy.get('@row').find(':nth-child(5)').should("contain", 'Linda Douglas');
@@ -101,6 +102,7 @@ describe('User Story 2 Create visit with vet', () => {
     cy.visit(ownersUrl);
     cy.wait('@getOwnersInAfter').then(({request, response}) => {
       cy.get(':nth-child(2) > .ownerFullName > a').click();
+      cy.wait(5000);
       cy.url().should('eq', ownersUrl+ "/2");
       cy.get('.table').find('td').contains('Vaccination'+random).parent().as('row');
       cy.get('@row').find(':nth-child(4) > :nth-child(2)').click();
