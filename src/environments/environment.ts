@@ -24,4 +24,5 @@
 export const environment = {
   production: false,
   REST_API_URL: 'http://petclinic-rest-tnpl-dev.herokuapp.com/petclinic/api/'
+  // with local docker backend you can use: 'http://localhost:9966/petclinic/api/'
 };

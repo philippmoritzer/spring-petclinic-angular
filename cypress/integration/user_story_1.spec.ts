@@ -32,24 +32,24 @@ describe('User Story 1 Delete Owner', () => {
             cy.get('#address').type('Bremer Str.');
             cy.get('#city').type('Bremen');
             cy.get('#telephone').type('0157157815203');
-            cy.get('[type="submit"]').click();
-        });
-    });
-
-    it('Should Owner be created', () => {
-        cy.wait('@getOwners').then(({request, response}) => {
-            cy.get('.ownerFullName').last().contains('Max Mustermann'+random);
-            cy.get('.ownerFullName').last().get('a').last().click();
+            cy.get('[data-cy=createOwnerButton]').click();
+          cy.wait(7000);
+          cy.wait('@getOwners').then(({request, response}) => {
+            cy.get('.ownerFullName').last().should('contain', 'Max Mustermann'+random);
+          });
         });
     });
 
     it('Should delete Owner', () => {
-        // cy.wait(5000);
-        // cy.get('.ownerFullName').last().get('a').last().click();
-        // cy.get('.container > :nth-child(5)').click();
-        // cy.wait(5000);
-        // cy.wait('@getOwners').then(({request, response}) => {
-        //   cy.get('.ownerFullName').last().contains('Max Mustermann'+random).should('not.exist');
-        // });
+      cy.wait(7000);
+      cy.wait('@getOwners').then(({request, response}) => {
+        cy.wait(5000);
+          cy.get('.ownerFullName').last().get('a').last().click();
+          cy.get('[data-cy=deleteOwnerButton]').click();
+          cy.wait(5000);
+          cy.wait('@getOwners').then(({request, response}) => {
+            cy.get('.ownerFullName').last().should('not.contain', 'Max Mustermann'+random);
+          });
+      });
     });
 });
